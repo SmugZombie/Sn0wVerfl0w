@@ -1,0 +1,11 @@
+Loader:
+v0.0.4 - Should have been 1.0.0 release
+
+
+Backend:
+v1.0.0 - Initial Release
+v1.0.1 - Bug Fixes
+v1.0.2 - Bug Fixes
+v1.0.3 - Fixed ?? in no_cache
+v1.0.3 - Added Clipboard to Sys IDs with click to copy functionality
+v1.0.4 - Added Changelog / Version Number / Links
