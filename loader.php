@@ -19,25 +19,28 @@ window.customFavicon = parseInt(localStorage.getItem("customFavicon")) || 0;
 window.sn0verfl0w_version = "<?php echo $backendVersion; ?>";
 window.sn0verfl0w_baseURL = baseURL;
 
-
-let includeURLs = new Array();
 let currentPage = window.location.href;
 let no_cache = "<?php echo $no_cache; ?>";
 
-includeURLs = {
+let includeURLs = {
 		AccountList: 'customer_account_list.do',
 		CustomerView: 'sys_id'
 }
 
-if(window.customFavicon){
-	includeJS('js/favicon.js?' + no_cache);
-}
+if(window==top){ // Only operate in top most iframe
+	if(window.customFavicon){
+		includeJS('js/favicon.js?' + no_cache);
+	}
 
-if(window==top){
 	includeJS('js/toolbox.js?' + no_cache);
+
+	if(currentPage.indexOf(includeURLs.AccountList) !== -1 || currentPage.indexOf(includeURLs.CustomerView) !== -1){
+		includeJS('js/accounts.js?' + no_cache);
+	}
 }
 
-if(currentPage.indexOf(includeURLs.AccountList) !== -1 || currentPage.indexOf(includeURLs.CustomerView) !== -1){
-  includeJS('js/accounts.js?' + no_cache);
-}
+
+	
+
+
 

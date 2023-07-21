@@ -33,6 +33,7 @@ function toggleCustomFavicon(){
     }else{
         localStorage.setItem("customFavicon", 1);
         document.getElementById("customFaviconStatus").innerText = 1;
+        updateFavicon();
     }
 }
 
@@ -112,4 +113,5 @@ document.getElementById("customFaviconEnabler").addEventListener("click", functi
 });
 document.getElementById("customFaviconSave").addEventListener("click", function() {
     localStorage.setItem("customFaviconSrc", document.getElementById("customFaviconSource").value );
+    updateFavicon();
 });
