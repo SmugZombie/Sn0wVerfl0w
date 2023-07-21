@@ -1,3 +1,4 @@
 <?php
-$loaderVersion = "0.0.4";
-$backendVersion = "v1.0.6";
+$loaderVersion = "1.0.0";
+$backendVersion = "v1.0.7";
+$baseUrl = "https://".$_SERVER['SERVER_NAME'];

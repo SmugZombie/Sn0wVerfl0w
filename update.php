@@ -18,10 +18,10 @@ _________        _______                                   _____ .__   _______
 ********************************************************************************************/
 // ==UserScript==
 // @name        Sn0wverfl0w - Custom SNow Tools
-// @namespace   https://snow.overflow.wtf/
-// @icon        https://snow.overflow.wtf/assets/images/monkey.png
-// @downloadURL https://snow.overflow.wtf/update.php?version=<?php echo $version; ?> 
-// @updateURL   https://snow.overflow.wtf/update.php?version=<?php echo $version; ?> 
+// @namespace   <?php echo $baseUrl; ?>/
+// @icon        <?php echo $baseUrl; ?>/assets/images/monkey.png
+// @downloadURL <?php echo $baseUrl; ?>/update.php?version=<?php echo $version; ?> 
+// @updateURL   <?php echo $baseUrl; ?>/update.php?version=<?php echo $version; ?> 
 // @description Adds new tools and features to familiar resources.
 // @include     https://*.service-now.com*
 // @grant       none
@@ -36,7 +36,7 @@ _________        _______                                   _____ .__   _______
     console.log("Sn0wverfl0w is Loading...");
     var snowverflowLoader = document.createElement('script');
     snowverflowLoader.type = 'text/javascript';
-    snowverflowLoader.src = '//snow.overflow.wtf/loader.php?version=<?php echo $version; ?> ';
+    snowverflowLoader.src = '<?php echo $baseUrl; ?>/loader.php?version=<?php echo $version; ?> ';
     document.getElementsByTagName("head")[0].appendChild(snowverflowLoader);
   })();
 /*== END SCRIPT LOADER ==========================================================*/

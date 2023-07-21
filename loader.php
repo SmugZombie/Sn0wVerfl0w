@@ -13,8 +13,7 @@ $referrer = $_SERVER['HTTP_REFERER'];
 require('./common/commonjs.php');
 ?>
 log("SNOVERFLOW LOADED", "info");
-log(window.location.href, "info");
-const baseURL = '//snow.overflow.wtf/';
+const baseURL = '<?php echo $baseUrl; ?>/';
 window.customFavicon = parseInt(localStorage.getItem("customFavicon")) || 0;
 window.sn0verfl0w_version = "<?php echo $backendVersion; ?>";
 window.sn0verfl0w_baseURL = baseURL;
@@ -23,17 +22,20 @@ let currentPage = window.location.href;
 let no_cache = "<?php echo $no_cache; ?>";
 
 let includeURLs = {
-		AccountList: 'customer_account_list.do',
-		CustomerView: 'sys_id'
+	AccountList: 'customer_account_list.do',
+	CustomerView: 'sys_id'
 }
 
 if(window==top){ // Only operate in top most iframe
+	// If the feature is enabled, Customize the Favicon
 	if(window.customFavicon){
 		includeJS('js/favicon.js?' + no_cache);
 	}
 
+	// Regardless of the page, load the toolbox
 	includeJS('js/toolbox.js?' + no_cache);
 
+	// Add the sys_id specific code
 	if(currentPage.indexOf(includeURLs.AccountList) !== -1 || currentPage.indexOf(includeURLs.CustomerView) !== -1){
 		includeJS('js/accounts.js?' + no_cache);
 	}

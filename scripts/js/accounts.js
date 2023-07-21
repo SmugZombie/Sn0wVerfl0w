@@ -5,10 +5,10 @@ window.customerTableFound = false;
 window.customerAccountFound = false;
 'use strict';
 
-setTimeout(function(){
+/*setTimeout(function(){
     checkForTable();
     checkForAccounts();
-}, 1500);
+}, 1500);*/
 
 function checkForTable(){
     //console.log("Checking for customers table")
@@ -30,7 +30,7 @@ function checkForTable(){
             }, 1000);
         }
     }catch(e){
-        //log(e, "danger")
+        //We don't care. No errors ftw
     }
 }
 
@@ -51,9 +51,8 @@ function checkForAccounts(){
             }, 1000);
         }
     }catch(e){
-        //log(e, "danger")
+        //We don't care. No errors ftw
     }
-    //frames[0].document.title.split(" | ")[1]
 }
 
 setInterval(function(){

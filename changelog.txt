@@ -1,5 +1,6 @@
 Loader:
 v0.0.4 - Should have been 1.0.0 release
+v1.0.0 - Simple Updates
 
 Backend:
 v1.0.0 - Initial Release
@@ -12,3 +13,6 @@ v1.0.5 - Re-arranged code to run only on top most window
 v1.0.5 - Added default custom icon to value
 v1.0.5 - Added instant results once saving custom favicon
 v1.0.6 - Updated to show changelog on home page
+v1.0.7 - Removed hardcoded baseUrl
+v1.0.7 - Updated Loader Version
+v1.0.7 - Removed setTimeout since setInterval already does the job
